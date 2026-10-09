@@ -130,7 +130,7 @@ document.getElementById('teNew').onclick=()=>{try{localStorage.removeItem(k);loc
       $('go').disabled = true; msg('Checking…');
       let kek, dek;
       try { kek = await deriveKek(pw); dek = await unwrap(kek); }
-      catch (e) { $('go').disabled = false; $('pw').select(); msg('Wrong password. Try again.', true); return; }
+      catch (e) { $('go').disabled = false; $('pw').select(); msg((e && e.name === 'OperationError') ? 'Wrong password (' + pw.length + ' characters typed). Try again.' : 'Could not check the password: ' + (e && (e.name + ' ' + e.message)), true); return; }
       if ($('rm').checked) await keyPut(kek); else await keyDel();
       try { await boot(dek); } catch (e) { $('go').disabled = false; msg('Could not open: ' + e.message, true); }
     };
