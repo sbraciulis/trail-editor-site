@@ -114,7 +114,7 @@ document.getElementById('teNew').onclick=()=>{try{localStorage.removeItem(k);loc
   }
 
   async function start() {
-    try { P = await (await fetch('params.json', { cache: 'no-cache' })).json(); }
+    try { P = await (await fetch('params.json?t=' + Date.now(), { cache: 'no-store' })).json(); }   // params.json is the only file that changes in place: skip CDN/browser caches
     catch (e) { msg('Could not load the page data. Check your connection and reload.', true); return; }
     if (/[?&#]forget\b/.test(location.search + location.hash)) { await keyDel(); msg('This device no longer remembers the password.'); }
     else {
