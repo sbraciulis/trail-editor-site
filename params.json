@@ -1,0 +1,1 @@
+{"v": 1, "kdf": {"name": "PBKDF2", "hash": "SHA-256", "iter": 650000, "salt": "iociuGhE7nJLFeyphGcSfw=="}, "wrap": {"iv": "atw5ovtEjAfX/j8a", "ct": "FbXYh/NbTxqVslX/o9nceSFGLGvk9ciVo+pIn3C+GTbrrz5xQ2etMqEQdR0J/eJN", "aad": "trail-editor-dek-v1"}, "manifest": "m38d0cb0764ce2eaf"}
